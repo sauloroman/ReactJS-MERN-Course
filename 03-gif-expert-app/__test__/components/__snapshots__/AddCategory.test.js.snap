@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in AddCategory.jsx it must match with snapshot 1`] = `
+<div>
+  <form
+    class="form"
+    data-testid="form-add-category"
+  >
+    <div
+      class="form__field"
+    >
+      <input
+        class="form__input"
+        placeholder="Ingrese gifs a buscar"
+        type="text"
+        value=""
+      />
+      <i
+        class="form__icon bx bx-search-alt-2"
+      />
+    </div>
+  </form>
+</div>
+`;

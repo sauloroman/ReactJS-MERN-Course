@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in GifExpertApp.jsx It must match with snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1
+      class="title"
+    >
+      GifExpertApp
+    </h1>
+    <form
+      class="form"
+      data-testid="form-add-category"
+    >
+      <div
+        class="form__field"
+      >
+        <input
+          class="form__input"
+          placeholder="Ingrese gifs a buscar"
+          type="text"
+          value=""
+        />
+        <i
+          class="form__icon bx bx-search-alt-2"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;

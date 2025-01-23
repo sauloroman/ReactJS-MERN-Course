@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  margin: 2rem auto;
+  width: 120rem;
+  max-width: 95%;
+}
+
+.heading {
+  font-size: 2rem;
+  color: #2ea9a9;
+  margin-bottom: 2rem;
+}
+
+.counters {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+}
+
+.counter--unique {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.counter__value {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.counter__name {
+  font-size: 1.2rem;
+}
+
+.counter__buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.counter__btn {
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.form {
+  width: 50rem;
+  max-width: 95%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.form__label {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.form__input {
+  font-family: inherit;
+  padding: .3rem 1rem;
+  border: 1px solid #ddd;
+}
+
+.form__btn {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  padding: .6rem;
+}
+
+.btn {
+  background-color: orangered;
+  border: none;
+  font-family: inherit;
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.btn:not(:last-child) {
+  margin-right: 2rem;
+}
