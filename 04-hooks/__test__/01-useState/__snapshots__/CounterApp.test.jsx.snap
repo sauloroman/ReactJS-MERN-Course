@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in CounterApp It must match with the snapshot 1`] = `
+<div>
+  <h1
+    class="heading"
+  >
+    UseState — CounterApp
+  </h1>
+  <div
+    class="counters"
+  >
+    <div
+      class="counter"
+    >
+      <h2
+        class="counter__value"
+        data-testid="counter-1"
+      >
+        10
+      </h2>
+      <span
+        class="counter__name"
+      >
+        Contador 1
+      </span>
+      <button
+        class="counter__btn"
+      >
+        Aumentar 1
+      </button>
+    </div>
+    <div
+      class="counter"
+    >
+      <h2
+        class="counter__value"
+        data-testid="counter-2"
+      >
+        20
+      </h2>
+      <span
+        class="counter__name"
+      >
+        Contador 2
+      </span>
+      <button
+        class="counter__btn"
+      >
+        Aumentar 2
+      </button>
+    </div>
+    <div
+      class="counter"
+    >
+      <h2
+        class="counter__value"
+        data-testid="counter-3"
+      >
+        30
+      </h2>
+      <span
+        class="counter__name"
+      >
+        Contador 3
+      </span>
+      <button
+        class="counter__btn"
+      >
+        Aumentar 3
+      </button>
+    </div>
+  </div>
+</div>
+`;

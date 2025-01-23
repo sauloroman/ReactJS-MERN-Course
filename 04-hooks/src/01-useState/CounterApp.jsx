@@ -13,7 +13,7 @@ export const CounterApp = () => {
 
       <div className="counters">
         <div className="counter">
-          <span className="counter__value">{counter1}</span>
+          <h2 className="counter__value" data-testid="counter-1">{counter1}</h2>
           <span className="counter__name">Contador 1</span>
           <button
             onClick={() =>
@@ -24,11 +24,11 @@ export const CounterApp = () => {
             }
             className="counter__btn"
           >
-            Aumentar
+            Aumentar 1
           </button>
         </div>
         <div className="counter">
-          <span className="counter__value">{counter2}</span>
+          <h2 className="counter__value" data-testid="counter-2">{counter2}</h2>
           <span className="counter__name">Contador 2</span>
           <button
             onClick={() =>
@@ -39,11 +39,11 @@ export const CounterApp = () => {
             }
             className="counter__btn"
           >
-            Aumentar
+            Aumentar 2
           </button>
         </div>
         <div className="counter">
-          <span className="counter__value">{counter3}</span>
+          <h2 className="counter__value" data-testid="counter-3">{counter3}</h2>
           <span className="counter__name">Contador 3</span>
           <button
             onClick={() =>
@@ -54,7 +54,7 @@ export const CounterApp = () => {
             }
             className="counter__btn"
           >
-            Aumentar
+            Aumentar 3
           </button>
         </div>
       </div>
