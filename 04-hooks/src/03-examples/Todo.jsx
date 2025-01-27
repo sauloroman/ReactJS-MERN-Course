@@ -12,10 +12,10 @@ export const Todo = ({ completed, id, title, userId }) => {
 
   return (
     <>
-      <div className={`todo ${completed && 'todo--completed'}`}>
-        <p ref={todoRef}>Title: <span>{title}</span></p>
-        <p>id: <span>{id}</span></p>
-        <p>userId: <span>{userId}</span></p>
+      <div data-testid="todo" className={`todo ${completed && 'todo--completed'}`}>
+        <p ref={todoRef}>Title: <span data-testid="todo-title">{title}</span></p>
+        <p>id: <span data-testid="todo-id">{id}</span></p>
+        <p>userId: <span data-testid="todo-userId">{userId}</span></p>
       </div>
 
       <code>{JSON.stringify( boxSize )}</code>

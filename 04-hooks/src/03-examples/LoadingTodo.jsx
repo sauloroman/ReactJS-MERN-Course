@@ -1,5 +1,5 @@
 export const LoadingTodo = () => {
   return (
-    <div className="loading">Cargando...</div>
+    <p data-testid="loading" className="loading">Cargando...</p>
   )
 }

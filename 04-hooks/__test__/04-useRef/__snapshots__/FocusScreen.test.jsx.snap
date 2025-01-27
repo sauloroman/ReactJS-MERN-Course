@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in FocusScreen Component It must match with snapshot 1`] = `
+<div>
+  <h1
+    class="heading"
+  >
+    UseRef — InputFocus
+  </h1>
+  <form
+    action="#"
+    class="form"
+  >
+    <div
+      class="form__field"
+    >
+      <input
+        class="form__input"
+        placeholder="Presiona el boton..."
+        type="text"
+      />
+    </div>
+    <button
+      class="btn"
+    >
+      Seleccionar el input
+    </button>
+  </form>
+</div>
+`;

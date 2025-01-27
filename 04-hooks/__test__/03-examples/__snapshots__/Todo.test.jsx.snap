@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in Todo Component It must match with snapshot 1`] = `
+<div>
+  <div
+    class="todo false"
+    data-testid="todo"
+  >
+    <p>
+      Title: 
+      <span
+        data-testid="todo-title"
+      >
+        Todo 1
+      </span>
+    </p>
+    <p>
+      id: 
+      <span
+        data-testid="todo-id"
+      >
+        1
+      </span>
+    </p>
+    <p>
+      userId: 
+      <span
+        data-testid="todo-userId"
+      >
+        1
+      </span>
+    </p>
+  </div>
+  <code>
+    {"width":0,"height":0}
+  </code>
+</div>
+`;
