@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in CounterAppWithCustomHook It must match with snapshot 1`] = `
+<div>
+  <h1
+    class="heading"
+  >
+    UseState — CounterAppCustomHook
+  </h1>
+  <div
+    class="counter counter--unique"
+  >
+    <span
+      class="counter__value"
+      data-testid="counter"
+    >
+      1
+    </span>
+    <span
+      class="counter__name"
+    >
+      Contador
+    </span>
+    <div
+      class="counter__buttons"
+    >
+      <button
+        class="counter__btn"
+      >
+        +1
+      </button>
+      <button
+        class="counter__btn"
+      >
+        Reset
+      </button>
+      <button
+        class="counter__btn"
+      >
+        -1
+      </button>
+    </div>
+  </div>
+</div>
+`;
