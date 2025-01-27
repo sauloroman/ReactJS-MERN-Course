@@ -6,8 +6,9 @@ export const Message = () => {
 
   useEffect(() => {
 
-    const onMouseMove = ({ x, y }) => {
-      setCoords({ x, y })
+    const onMouseMove = (event) => {
+      const { clientX, clientY } = event
+      setCoords({ x: clientX, y: clientY })
     }
 
     window.addEventListener('mousemove', onMouseMove )
@@ -19,6 +20,6 @@ export const Message = () => {
   }, [])
 
   return (
-    <p>Coordenadas: { JSON.stringify( coords ) }</p>
+    <p>Coordenadas: <span data-testid="coords">{ JSON.stringify( coords ) }</span></p>
   )
 }

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in FormWithCustomHook it must match with snapshot 1`] = `
+<div>
+  <h2
+    class="heading"
+  >
+    UseEffect — FormCustomHook
+  </h2>
+  <form
+    action="#"
+    class="form"
+  >
+    <div
+      class="form__field"
+    >
+      <label
+        class="form__label"
+        for="username"
+      >
+        Nombre del usuario
+      </label>
+      <input
+        class="form__input"
+        data-testid="username-input"
+        id="username"
+        name="username"
+        placeholder="Ingrese su nombre"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form__field"
+    >
+      <label
+        class="form__label"
+        for="email"
+      >
+        Correo del usuario
+      </label>
+      <input
+        class="form__input"
+        data-testid="email-input"
+        id="email"
+        name="email"
+        placeholder="Ingrese su correo"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="form__btn"
+    >
+      Limpiar formulario
+    </button>
+  </form>
+</div>
+`;

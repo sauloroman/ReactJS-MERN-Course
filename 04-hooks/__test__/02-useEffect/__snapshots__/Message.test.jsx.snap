@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in Message component it should match with snapshot 1`] = `
+<div>
+  <p>
+    Coordenadas: 
+    <span
+      data-testid="coords"
+    >
+      {"x":0,"y":0}
+    </span>
+  </p>
+</div>
+`;

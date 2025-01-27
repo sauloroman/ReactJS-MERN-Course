@@ -38,10 +38,11 @@ export const SimpleForm = () => {
     <>
       <h1 className="heading">UseEffect &mdash; Formulario Simple</h1>
 
-      <form action="#" className="form">
+      <form data-testid="simple-form" action="#" className="form">
         <div className="form__field">
           <label htmlFor="username" className="form__label">Nombre del usuario</label>
           <input 
+            data-testid="username-input"
             name="username"
             value={ username }
             onChange={onInputChange}
@@ -53,6 +54,7 @@ export const SimpleForm = () => {
         <div className="form__field">
           <label htmlFor="email" className="form__label">Correo Electrónico</label>
           <input 
+            data-testid="email-input"
             name="email"
             value={ email }
             onChange={onInputChange}
@@ -64,6 +66,7 @@ export const SimpleForm = () => {
         <div className="form__field">
           <label htmlFor="age" className="form__label">Edad</label>
           <input 
+            data-testid="age-input"
             name="age"
             value={ age }
             onChange={onInputChange}

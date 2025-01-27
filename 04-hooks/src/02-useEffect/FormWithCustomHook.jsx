@@ -12,6 +12,7 @@ export const FormWithCustomHook = () => {
         <div className="form__field">
           <label htmlFor="username" className="form__label">Nombre del usuario</label>
           <input 
+            data-testid="username-input"
             id="username"
             name="username"
             value={username}
@@ -24,6 +25,7 @@ export const FormWithCustomHook = () => {
         <div className="form__field">
           <label htmlFor="email" className="form__label">Correo del usuario</label>
           <input 
+            data-testid="email-input"
             id="email"
             name="email"
             value={email}
