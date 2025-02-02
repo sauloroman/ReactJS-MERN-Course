@@ -27,10 +27,11 @@ export const TodoAdd = ({ onAddTodo }) => {
     <div className="todo__add">
       <h2 className="todo__title">Agregar nuevo todo</h2>
 
-      <form onSubmit={ onCreateTodo } action="#" className="todo__form">
+      <form data-testid='form-todo' onSubmit={ onCreateTodo } action="#" className="todo__form">
         <div className="todo__form-field">
           <label htmlFor="todo-title" className="todo__form-label">Título</label>
           <input
+            data-testid='todo-input-title'
             name='title'
             value={title}
             onChange={ onInputChange }
@@ -43,6 +44,7 @@ export const TodoAdd = ({ onAddTodo }) => {
         <div className="todo__form-field">
           <label htmlFor="todo-description" className="todo__form-label">Descripción</label>
           <textarea
+            data-testid='todo-input-description'
             className='todo__textarea'
             name='description'
             value={description}

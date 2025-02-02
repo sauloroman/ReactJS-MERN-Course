@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in TodoItem It must match with snapshot 1`] = `
+<div>
+  <div
+    class="todo false"
+    data-testid="todo"
+  >
+    <div
+      class="todo__info"
+    >
+      <p
+        class="todo__item-title"
+      >
+        Title 1
+      </p>
+      <p
+        class="todo__description"
+      >
+        Description 1
+      </p>
+    </div>
+    <div
+      class="todo__controls"
+    >
+      <button
+        class="todo__button todo__button--complete"
+        data-testid="button-toggle"
+      >
+        Completar
+      </button>
+      <button
+        class="todo__button todo__button--delete"
+        data-testid="button-delete"
+      >
+        Eliminar
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { TodoAdd } from './components/TodoAdd.jsx'
 import {TodoList} from './components/TodoList.jsx'
 import { useTodos } from './hooks/useTodos.js'
@@ -7,6 +8,10 @@ import './helpers/intro-reducer.js'
 export const TodoApp = () => {
 
   const { onAddTodo, onDeleteTodo, onToggleTodo, todos } = useTodos()
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify( todos ) )
+  }, [todos])
 
   return (
     <div className='todos'>

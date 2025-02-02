@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in TodoAdd Component It must match with snapshot 1`] = `
+<div>
+  <div
+    class="todo__add"
+  >
+    <h2
+      class="todo__title"
+    >
+      Agregar nuevo todo
+    </h2>
+    <form
+      action="#"
+      class="todo__form"
+      data-testid="form-todo"
+    >
+      <div
+        class="todo__form-field"
+      >
+        <label
+          class="todo__form-label"
+          for="todo-title"
+        >
+          Título
+        </label>
+        <input
+          class="todo__form-input"
+          data-testid="todo-input-title"
+          id="todo-title"
+          name="title"
+          placeholder="Agrega un título"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="todo__form-field"
+      >
+        <label
+          class="todo__form-label"
+          for="todo-description"
+        >
+          Descripción
+        </label>
+        <textarea
+          class="todo__textarea"
+          data-testid="todo-input-description"
+          id="todo-description"
+          name="description"
+          placeholder="Agrega una descripción "
+        />
+      </div>
+      <div
+        class="todo__form-box"
+      >
+        <button
+          class="todo__form-button"
+        >
+          Agregar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
