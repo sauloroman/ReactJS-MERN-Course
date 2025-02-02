@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in Memorize Component it must match with snapshot 1`] = `
+<div>
+  <h1
+    class="heading"
+  >
+    Memo Function
+  </h1>
+  <div
+    class="counter"
+  >
+    <p
+      class="counter__value"
+    >
+      1
+    </p>
+    <div
+      class="counter__name"
+    >
+      Contador
+    </div>
+  </div>
+  <button
+    class="btn"
+  >
+    +1
+  </button>
+  <button
+    class="btn"
+    data-testid="button-change-status"
+  >
+    Shown | Hidden 
+    false
+  </button>
+</div>
+`;

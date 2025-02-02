@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in ShowIncrement It should match with snapshot 1`] = `
+<div>
+  <button
+    class="btn"
+  >
+    Incrementar contador
+  </button>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in Small Component It must match with snapshot 1`] = `
+<div>
+  <div
+    class="counter"
+  >
+    <p
+      class="counter__value"
+    />
+    <div
+      class="counter__name"
+    >
+      Contador
+    </div>
+  </div>
+</div>
+`;

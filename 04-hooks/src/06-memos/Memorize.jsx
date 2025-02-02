@@ -15,7 +15,7 @@ export const Memorize = () => {
 
       <button className="btn" onClick={() => onIncrementCounter()}>+1</button>
 
-      <button onClick={() => setIsShown(!isShown)} className='btn'>Shown | Hidden {JSON.stringify( isShown )}</button>
+      <button data-testid="button-change-status" onClick={() => setIsShown(!isShown)} className='btn'>Shown | Hidden {JSON.stringify( isShown )}</button>
     </>
   )
 }
