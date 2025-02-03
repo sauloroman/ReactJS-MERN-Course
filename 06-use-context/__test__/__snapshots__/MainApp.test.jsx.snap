@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in MainApp Component It must match with snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1
+      class="heading"
+    >
+      UseContext
+    </h1>
+    <div
+      class="nav"
+    >
+      <ul
+        class="nav__list"
+      >
+        <a
+          aria-current="page"
+          class="nav__item--active nav__item"
+          href="/"
+        >
+          <li
+            class="nav__text"
+          >
+            Home
+          </li>
+        </a>
+        <a
+          class="false nav__item"
+          href="/about"
+        >
+          <li
+            class="nav__text"
+          >
+            About
+          </li>
+        </a>
+        <a
+          class="false nav__item"
+          href="/login"
+        >
+          <li
+            class="nav__text"
+          >
+            Login
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div>
+      <h1
+        class="heading__page"
+      >
+        Home Page
+      </h1>
+    </div>
+  </div>
+</div>
+`;

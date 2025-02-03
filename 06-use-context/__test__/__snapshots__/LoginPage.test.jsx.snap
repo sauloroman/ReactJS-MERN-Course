@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in LoginPage Component it must match with snapshot 1`] = `
+<div>
+  <div>
+    <h1
+      class="heading__page"
+    >
+      Bienvenido a la app
+    </h1>
+    <button
+      class="btn"
+    >
+      Iniciar Sesión
+    </button>
+  </div>
+</div>
+`;

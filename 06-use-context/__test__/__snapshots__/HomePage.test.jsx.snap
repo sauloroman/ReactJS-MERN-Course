@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in HomePage Component It must match with snapshot 1`] = `
+<div>
+  <div>
+    <h1
+      class="heading__page"
+    >
+      Home Page
+    </h1>
+  </div>
+</div>
+`;

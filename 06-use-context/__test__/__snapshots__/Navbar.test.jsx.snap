@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in Navbar Component it must match with snapshot 1`] = `
+<div>
+  <div
+    class="nav"
+  >
+    <ul
+      class="nav__list"
+    >
+      <a
+        aria-current="page"
+        class="nav__item--active nav__item"
+        href="/"
+      >
+        <li
+          class="nav__text"
+        >
+          Home
+        </li>
+      </a>
+      <a
+        class="false nav__item"
+        href="/about"
+      >
+        <li
+          class="nav__text"
+        >
+          About
+        </li>
+      </a>
+      <a
+        class="false nav__item"
+        href="/login"
+      >
+        <li
+          class="nav__text"
+        >
+          Login
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+`;
