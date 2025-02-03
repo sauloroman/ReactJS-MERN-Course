@@ -20,6 +20,7 @@ export const useFetchNew = ( url ) => {
       data: null,
       isLoading: true,
       hasError: false,
+      error: null,
     })
   }
 
@@ -27,23 +28,23 @@ export const useFetchNew = ( url ) => {
 
     if ( localCache[url] ) {
       console.log('Mostrando cache')
-
+      
       setState({
         data: localCache[url],
         isLoading: false,
         hasError: false,
         error: null,
       })
-
+      
       return;
     }
-
-    setLoadingState()
     
-    const res = await fetch( url )
+    setLoadingState()
 
+    const res = await fetch( url )
+    
     //sleep
-    await new Promise( (resolve) => setTimeout(resolve, 1500))
+    // await new Promise( (resolve) => setTimeout(resolve, 1500))
 
     if ( !res.ok ) {
       setState({
@@ -57,7 +58,7 @@ export const useFetchNew = ( url ) => {
       })
       return;
     }
-    
+
     const data = await res.json();
 
     setState({
@@ -75,6 +76,7 @@ export const useFetchNew = ( url ) => {
     data: state.data,
     isLoading: state.isLoading,
     hasError: state.hasError,
+    error: state.error
   }
 
 }
