@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 130rem;
+  max-width: 95%;
+}
+
+.title__page {
+  font-size: 2rem;
+  padding: 2rem 0;
+  color: #1864ab;
+}
+
+.nav {
+  padding: 1rem;
+  background-color: #212529;
+  color: #f8f9fa;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.nav__link {
+  color: #f8f9fa;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem;
+  width: 10rem;
+  text-align: center;
+}
+
+.nav__link:nth-child(1) {
+  margin-right: 4rem;
+}
+
+.nav__link--active {
+  background-color: #1864ab;
+}
+
+.nav__info {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav__button {
+  background-color: #1864ab;
+  border: 1px solid transparent;
+  color: #f8f9fa;
+  padding: .5rem 3rem;
+  font-family: inherit;
+  font-weight: semi-bold;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.nav__button:hover {
+  border-color: #f8f9fa;
+  background-color: transparent;
+  color: #f8f9fa;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.hero-card {
+  height: 50rem;
+  position: relative;
+  perspective: 150rem;
+}
+
+.hero-card__side {
+  -webkit-backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(#212529, .15);
+  height: 50rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  transition: all .8s ease;
+}
+
+.hero-card__back {
+  padding: 3rem;
+  transform: rotateY(180deg);
+  color: #f8f9fa;
+  background-image: linear-gradient(
+    to right bottom,
+    #1864ab,
+    #339af0
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-card:hover .hero-card__front {
+  transform: rotateY(-180deg);
+}
+
+.hero-card:hover .hero-card__back {
+  transform: rotateY(0)
+}
+
+.hero-card__image {
+  width: 100%;
+}
+
+.hero-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hero-card__name {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.hero-card__publisher {
+  font-size: 1.2rem;
+}
+
+.hero-card__first {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.hero-card__first span {
+  text-decoration: underline;
+}
+
+.hero-card__buttonbox {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-card__button {
+  color: #f8f9fa;
+  text-decoration: none;
+  padding: .5rem;
+  border: 1px solid #f8f9fa;
+}
