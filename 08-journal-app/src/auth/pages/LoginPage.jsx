@@ -3,6 +3,8 @@ import { Button, Grid2, TextField, Typography, Link } from "@mui/material"
 import { Google } from '@mui/icons-material'
 import { AuthLayout } from "../layout/AuthLayout"
 import { useForm } from '../../hooks'
+import { useDispatch } from 'react-redux'
+import { startCreatingUserWithEmailAndPasswordThunk, startGoogleSignInThunk } from '../../store/auth'
 
 const formData = {
   email: '',
@@ -11,12 +13,15 @@ const formData = {
 
 export const LoginPage = () => {
 
+  const dispatch = useDispatch()
   const { email, password, onInputChange } = useForm( formData )
 
   const onSubmitLogin = (e) => {
     e.preventDefault()
+  }
 
-    console.log({ email, password })
+  const onGoogleSignIn = () => {
+    dispatch( startGoogleSignInThunk() )
   }
 
   return (
@@ -68,8 +73,9 @@ export const LoginPage = () => {
             </Grid2>
             <Grid2 item size={{ xs: 12, sm: 6 }}>
               <Button
+                onClick={ onGoogleSignIn }
                 sx={{ padding: 1 }}
-                variant="contained"
+                variant="outlined"
                 fullWidth
                 aria-label="google-btn"
               >
