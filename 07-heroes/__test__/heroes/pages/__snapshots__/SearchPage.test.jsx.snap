@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in SearchPage Component it must match with snapshot 1`] = `
+<div>
+  <div
+    class="search"
+  >
+    <h1
+      class="search__title"
+    >
+      Búsqueda
+    </h1>
+    <div
+      class="search__grid"
+    >
+      <div
+        class="search__content"
+      >
+        <h2
+          class="search__subtitle"
+        >
+          Encuentra tu heroe
+        </h2>
+        <form
+          aria-label="form"
+          class="search__form"
+        >
+          <input
+            autocomplete="off"
+            class="search__input"
+            name="searchHero"
+            placeholder="Ingresa el nombre de tu heroe favorito"
+            type="text"
+            value=""
+          />
+          <button
+            class="search__button"
+          >
+            Buscar
+          </button>
+        </form>
+      </div>
+      <div
+        class="search__alerts"
+      >
+        <h2
+          class="search__subtitle"
+        >
+          Resultados
+        </h2>
+        <div
+          class="search__alert search__alert--success true"
+        >
+          Busca un heroe
+        </div>
+        <div
+          aria-label="alert-error"
+          class="search__alert search__alert--error hidden"
+        >
+          No se encontró al heroe 
+          <span
+            class="strong"
+          />
+        </div>
+        <div
+          class="search__results"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

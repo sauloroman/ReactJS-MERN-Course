@@ -1,7 +1,7 @@
 import queryString from 'query-string'
 import { useLocation, useNavigate } from "react-router-dom"
 import { getHeroesByName } from '../helpers'
-import { useForm } from '../../../../../original-code/08-heroes/src/hooks/useForm'
+import { useForm } from '../../../src/hooks/useForm'
 import { HeroCard } from '../components/HeroCard'
 
 export const SearchPage = () => {
@@ -31,7 +31,7 @@ export const SearchPage = () => {
       <div className="search__grid">
         <div className="search__content">
           <h2 className="search__subtitle">Encuentra tu heroe</h2>
-          <form onSubmit={ onSearchSubmit } className="search__form">
+          <form aria-label='form' onSubmit={ onSearchSubmit } className="search__form">
             <input
               placeholder="Ingresa el nombre de tu heroe favorito" 
               type="text" 
@@ -51,7 +51,7 @@ export const SearchPage = () => {
             Busca un heroe
           </div>
 
-          <div className={`search__alert search__alert--error ${ showError || 'hidden' }`}>
+          <div aria-label='alert-error' className={`search__alert search__alert--error ${ showError || 'hidden' }`}>
             No se encontró al heroe <span className='strong'>{q}</span>
           </div>
 
