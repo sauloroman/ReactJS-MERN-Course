@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const CharactersByHero = ({ alter_ego, characters }) => {
-  console.log({ alter_ego, characters })
   return ( alter_ego === characters )
   ? <></>
   : <p>{characters}</p>
