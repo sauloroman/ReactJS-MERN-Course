@@ -1,9 +1,11 @@
 import { Button, Grid2, IconButton, TextField, Typography } from "@mui/material"
-import { useMemo, useRef } from "react"
+import { useEffect, useMemo, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useForm } from "../../hooks"
 import { DeleteOutline, SaveOutlined, UploadOutlined } from "@mui/icons-material"
-import { startSaveNote } from "../../store/journal/journal.thunk"
+import { startDeletingNote, startSaveNote, startUploadingFiles } from "../../store/journal/journal.thunk"
+import { ImageGallery } from "../components/ImageGallery"
+import { setActiveMode } from "../../store/journal/journal.slice"
 
 export const NoteView = () => {
 
@@ -19,17 +21,21 @@ export const NoteView = () => {
     return newDate.toLocaleDateString()
   }, [date])
 
+  useEffect(() => {
+    dispatch( setActiveMode( formState ) )
+  }, [formState])
+
   const onSaveNote = () => {
     dispatch( startSaveNote() )
   }
 
   const onFileInputChange = ({ target }) => {
     if ( target.files === 0 ) return
-    
+    dispatch( startUploadingFiles(target.files) )
   }
 
   const onDelete = () => {
-
+    dispatch( startDeletingNote() )
   }
 
   return (
@@ -109,6 +115,11 @@ export const NoteView = () => {
           Borrar
         </Button>
       </Grid2>
+
+      <ImageGallery 
+        images={ note.imageUrls }
+      />
+
     </Grid2>
   )
 }
