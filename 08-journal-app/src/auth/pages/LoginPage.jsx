@@ -1,10 +1,10 @@
 import { Link as RouterLink } from 'react-router-dom'
-import { Button, Grid2, TextField, Typography, Link } from "@mui/material"
+import { Button, Grid2, TextField, Typography, Link, Alert } from "@mui/material"
 import { Google } from '@mui/icons-material'
 import { AuthLayout } from "../layout/AuthLayout"
 import { useForm } from '../../hooks'
-import { useDispatch } from 'react-redux'
-import { startCreatingUserWithEmailAndPasswordThunk, startGoogleSignInThunk } from '../../store/auth'
+import { useDispatch, useSelector } from 'react-redux'
+import { startCreatingUserWithEmailAndPasswordThunk, startGoogleSignInThunk, startLoginWithEmailAndPasswordThunk } from '../../store/auth'
 
 const formData = {
   email: '',
@@ -14,10 +14,13 @@ const formData = {
 export const LoginPage = () => {
 
   const dispatch = useDispatch()
-  const { email, password, onInputChange } = useForm( formData )
+
+  const { status, errorMessage } = useSelector( state => state.auth )
+  const { formState, email, password, onInputChange } = useForm( formData )
 
   const onSubmitLogin = (e) => {
     e.preventDefault()
+    dispatch( startLoginWithEmailAndPasswordThunk(formState) )
   }
 
   const onGoogleSignIn = () => {
@@ -58,6 +61,16 @@ export const LoginPage = () => {
               onChange={onInputChange}
               slotProps={{'data-testid': 'input-password'}}
             />
+          </Grid2>
+
+          <Grid2
+            display={ !!errorMessage ? '' : 'none' } 
+            container 
+            sx={{ mb: 2, mt: 1 }} spacing={2}
+          >
+            <Grid2 item size={{ xs: 12, sm: 6 }}>
+              <Alert severity='error'>{errorMessage}</Alert>
+            </Grid2>
           </Grid2>
 
           <Grid2 container spacing={2} sx={{ mb: 2, mt: 1 }}>
