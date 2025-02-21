@@ -2,6 +2,7 @@ import { Button, Grid2, IconButton, TextField, Typography } from "@mui/material"
 import { useEffect, useMemo, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useForm } from "../../hooks"
+import Swal from 'sweetalert2'
 import { DeleteOutline, SaveOutlined, UploadOutlined } from "@mui/icons-material"
 import { startDeletingNote, startSaveNote, startUploadingFiles } from "../../store/journal/journal.thunk"
 import { ImageGallery } from "../components/ImageGallery"
@@ -11,7 +12,7 @@ export const NoteView = () => {
 
   const dispatch = useDispatch()
   const { active: note, messageSaved, isSaving } = useSelector( state => state.journal )
-
+  
   const fileInputRef = useRef()
 
   const { body, title, date, onInputChange, formState } = useForm( note )
@@ -24,6 +25,12 @@ export const NoteView = () => {
   useEffect(() => {
     dispatch( setActiveMode( formState ) )
   }, [formState])
+
+  useEffect(() => {
+    if ( messageSaved.length > 0 ) {
+      Swal.fire('Nota actualizada', messageSaved, 'success')
+    }
+  }, [messageSaved])
 
   const onSaveNote = () => {
     dispatch( startSaveNote() )
