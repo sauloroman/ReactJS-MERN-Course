@@ -5,6 +5,7 @@ import { ImageGallery } from '../component';
 export const NoteView = () => {
   return (
     <Grid2
+      className='animate__animated animate__fadeIn animate__faster'
       container
       sx={{ mb: 1 }}
     >
@@ -23,7 +24,6 @@ export const NoteView = () => {
           </Button>
         </Grid2>
       </Grid2>
-
 
       <Grid2 width={'100%'} mb={5}>
         <TextField

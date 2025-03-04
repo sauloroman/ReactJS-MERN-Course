@@ -1,15 +1,44 @@
+import { useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import { Link as RouterLink } from 'react-router-dom';
-import { Button, Grid2, Link, TextField, Typography } from '@mui/material';
+import { Alert, Button, Grid2, Link, TextField, Typography } from '@mui/material';
 import { Google } from '@mui/icons-material';
+import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 import { AuthLayout } from '../layout/AuthLayout';
+import { useForm } from '../../hooks';
 
 export const LoginPage = () => {
+
+  const { status, errorMessage } = useSelector( state => state.auth )
+  const dispatch = useDispatch()
+
+  const isAuthenticating = useMemo(() => status === 'checking', [status])
+
+  const { formState, email, password, onInputChange, onResetForm } = useForm({
+    email: '',
+    password: '',
+  })
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    dispatch( startLoginWithEmailPassword( formState ) )
+    onResetForm()
+  }
+
+  const onGoogleSignIn = () => {
+    dispatch( startGoogleSignIn() )
+    onResetForm()
+  }
+
   return (
     <AuthLayout title="Login">
-      <form action="">
+      <form className='animate__animated animate__fadeIn animate__faster' onSubmit={ onSubmit } action="">
         <Grid2 container>
           <Grid2 size={{ xs: 12 }} sx={{ mt: 2 }}>
             <TextField
+              name="email"
+              value={email}
+              onChange={onInputChange}
               label="Correo"
               type="email"
               placeholder="correo@gmail.com"
@@ -19,6 +48,9 @@ export const LoginPage = () => {
 
           <Grid2 size={{ xs: 12 }} sx={{ mt: 2 }}>
             <TextField
+              name="password"
+              value={password}
+              onChange={onInputChange}
               label="Contraseña"
               type="password"
               placeholder="Contraseña"
@@ -26,15 +58,29 @@ export const LoginPage = () => {
             />
           </Grid2>
 
+          <Grid2 mt={2} display={ !!errorMessage || 'none'} width={'100%'}>
+            <Alert severity='error'>{errorMessage}</Alert>
+          </Grid2>
+
           <Grid2 container spacing={2} sx={{ mb: 2, mt: 2 }} width={'100%'}>
             <Grid2 size={{ xs: 12, sm: 6 }}>
-              <Button variant="contained" fullWidth>
+              <Button
+                disabled={isAuthenticating} 
+                type='submit' 
+                variant="contained" 
+                fullWidth
+              >
                 Login
               </Button>
             </Grid2>
 
             <Grid2 size={{ xs: 12, sm: 6 }}>
-              <Button variant="outlined" fullWidth>
+              <Button
+                disabled={isAuthenticating} 
+                variant="outlined" 
+                fullWidth
+                onClick={ onGoogleSignIn }
+              >
                 <Google />
                 <Typography sx={{ ml: 1 }}>Google</Typography>
               </Button>
