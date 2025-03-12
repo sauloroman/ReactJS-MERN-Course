@@ -6,27 +6,22 @@ import { getEnvironments } from "../helpers";
 // console.log(process.env)
 // console.log(import.meta.env)
 
-const envs = getEnvironments()
-console.log(envs)
+const {
+  VITE_APIKEY,
+  VITE_AUTHDOMAIN,
+  VITE_PROJECTID,
+  VITE_STORAGEBUCKET,
+  VITE_MESSAGINGSENDERID,
+  VITE_APPID,
+} = getEnvironments()
 
-// Produccion
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCJShZwfA1KzAdANM20vfwL-H-AlCEgUsQ",
-//   authDomain: "journal-app-643b0.firebaseapp.com",
-//   projectId: "journal-app-643b0",
-//   storageBucket: "journal-app-643b0.firebasestorage.app",
-//   messagingSenderId: "70122919900",
-//   appId: "1:70122919900:web:06d6940f03733c7c9ca119"
-// };
-
-// Testing
 const firebaseConfig = {
-  apiKey: "AIzaSyBNyKAd4-sx2j_8SKSJVtHYaiOcnPMLHIw",
-  authDomain: "journal-app-testing-7a123.firebaseapp.com",
-  projectId: "journal-app-testing-7a123",
-  storageBucket: "journal-app-testing-7a123.firebasestorage.app",
-  messagingSenderId: "989321931655",
-  appId: "1:989321931655:web:902c6fb8165326e1f88122"
+  apiKey: VITE_APIKEY,
+  authDomain: VITE_AUTHDOMAIN,
+  projectId: VITE_PROJECTID,
+  storageBucket: VITE_STORAGEBUCKET,
+  messagingSenderId: VITE_MESSAGINGSENDERID,
+  appId: VITE_APPID,
 };
 
 // Initialize Firebase

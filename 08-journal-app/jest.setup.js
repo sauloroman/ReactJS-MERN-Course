@@ -1,4 +1,4 @@
-import 'whatwg-fetch';
+import 'whatwg-fetch'
 
 require('dotenv').config({
   path: '.env.test'
