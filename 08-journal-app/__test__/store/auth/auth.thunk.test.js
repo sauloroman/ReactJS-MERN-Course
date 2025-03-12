@@ -25,7 +25,7 @@ describe('Tests in auth.trunk', () => {
 
     const loginData = { ok: true, ...testUser }
 
-    // De esta manera podemos controlar los resultados que esta funcion puede retornar
+    // De esta manera podemos controlar los resultados que esta funcion puede retornar. mockResolvedValue es para promesas, en contraste con mockReturnValue
     await signInWithGoogle.mockResolvedValue( loginData )
 
     // thunk
