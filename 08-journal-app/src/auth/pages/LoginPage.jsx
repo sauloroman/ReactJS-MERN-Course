@@ -1,8 +1,15 @@
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Link as RouterLink } from 'react-router-dom';
-import { Alert, Button, Grid2, Link, TextField, Typography } from '@mui/material';
-import { Google } from '@mui/icons-material';
+
+import Alert from '@mui/material/Alert'
+import Button from '@mui/material/Button'
+import Grid2 from '@mui/material/Grid2'
+import Link from '@mui/material/Link'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
+
+import Google from '@mui/icons-material/Google';
 import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks';
@@ -23,7 +30,7 @@ export const LoginPage = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    dispatch( startLoginWithEmailPassword( formState ) )
+    dispatch( startLoginWithEmailPassword({ email, password }))
     onResetForm()
   }
 
@@ -34,7 +41,7 @@ export const LoginPage = () => {
 
   return (
     <AuthLayout title="Login">
-      <form className='animate__animated animate__fadeIn animate__faster' onSubmit={ onSubmit } action="">
+      <form aria-label='submit-form' className='animate__animated animate__fadeIn animate__faster' onSubmit={ onSubmit } action="">
         <Grid2 container>
           <Grid2 size={{ xs: 12 }} sx={{ mt: 2 }}>
             <TextField
@@ -57,6 +64,7 @@ export const LoginPage = () => {
               type="password"
               placeholder="Contraseña"
               fullWidth
+              inputProps={{ 'data-testid': 'password' }}
             />
           </Grid2>
 
@@ -78,6 +86,7 @@ export const LoginPage = () => {
 
             <Grid2 size={{ xs: 12, sm: 6 }}>
               <Button
+                aria-label='google-btn'
                 disabled={isAuthenticating} 
                 variant="outlined" 
                 fullWidth
