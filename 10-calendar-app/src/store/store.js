@@ -1,8 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { uiSlice } from './'
+import { uiSlice } from './ui/ui.slice'
+import { calendarSlice } from './calendar/calendar.slice'
 
 export const store = configureStore({
-  reducers: {
-    ui: uiSlice.reducer
-  }
+  reducer: {
+    ui: uiSlice.reducer,
+    calendar: calendarSlice.reducer
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false
+  })
 })
