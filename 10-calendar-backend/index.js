@@ -11,9 +11,8 @@ app.use( express.static('public') )
 app.use( express.json() )
 
 // Routes
-const authRoutes = require('./routes/auth.routes')
-
-app.use('/api/auth', authRoutes )
+app.use('/api/auth', require('./routes/auth.routes') )
+app.use('/api/events', require('./routes/events.routes') )
 
 // Authentication
 

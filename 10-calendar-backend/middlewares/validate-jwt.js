@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken')
 
 const validateJWT = ( req = request, res = response, next ) => {
 
-  // X-TOKEN
   const token = req.header('x-token')
 
   if ( !token ) return res.status(401).json({ok: false, msg: 'No hay token en la peticion'})
