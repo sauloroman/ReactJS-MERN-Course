@@ -1,7 +1,10 @@
 import axios from 'axios'
+import { getEnvVariables } from '../helpers'
+
+const { VITE_BACKEND_URL } = getEnvVariables()
 
 const calendarApi = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL
+  baseURL: VITE_BACKEND_URL
 })
 
 calendarApi.interceptors.request.use( config => {
