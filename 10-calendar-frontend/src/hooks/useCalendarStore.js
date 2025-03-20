@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { onAddNewEvent, onDeleteEvent, onSetActiveEvent, onUpdateEvent, onLoadEvents } from "../store/calendar/calendar.slice"
 import { calendarApi } from "../api"
 import { convertEventsToDateEvents } from "../helpers"
+import Swal from "sweetalert2"
 
 export const useCalendarStore = () => {
 
@@ -15,19 +16,32 @@ export const useCalendarStore = () => {
 
   const startSavingEvent = async ( calendarEvent ) => {
 
-    if ( calendarEvent._id ) {
-      dispatch( onUpdateEvent({ ...calendarEvent }))
-    } else {
+    try {
+      
+      if ( calendarEvent.id ) {
+        await calendarApi.put(`/events/${calendarEvent.id}`, calendarEvent)
+        dispatch( onUpdateEvent({ ...calendarEvent, user }))
+        return
+      } 
+  
       const { data } = await calendarApi.post('/events', calendarEvent )
-      dispatch( onAddNewEvent({ ...calendarEvent, id: data.event.id, user }) )
-    }
+       dispatch( onAddNewEvent({ ...calendarEvent, id: data.event.id, user }) )
 
+    } catch (error) {
+      console.log(error)
+      Swal.fire('Error al guardar', error.response.data.msg, 'error')
+    }
   }
 
-  const startDeleteEvent = () => {
-    // TODO: Llegar al backend
+  const startDeleteEvent = async () => {
+    try {
+      await calendarApi.delete(`/events/${activeEvent.id}`)
+      dispatch( onDeleteEvent() )
+    } catch (error) {
+      console.log(error)
+      Swal.fire('Error al eliminar', error.response.data.msg, 'error')
+    }
 
-    dispatch( onDeleteEvent() )
   }
 
   const startLoadingEvent = async () => {
@@ -49,9 +63,9 @@ export const useCalendarStore = () => {
 
     //* Metodos
     setActiveEvent,
-    startSavingEvent,
     startDeleteEvent,
     startLoadingEvent,
+    startSavingEvent,
     
   }
 }
