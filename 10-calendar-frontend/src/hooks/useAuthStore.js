@@ -77,10 +77,6 @@ export const useAuthStore = () => {
     dispatch( onLogout() )
   }
 
-  useEffect(() => {
-    checkAuthToken()
-  }, [])
-
   return {
     //* Propiedades
     status,
